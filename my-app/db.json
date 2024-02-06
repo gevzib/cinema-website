@@ -1,0 +1,25 @@
+{
+  "movie": [
+    { "id": "1", "title": "Interstellar", "description": "stuff stuff stuff" },
+    {
+      "id": "2",
+      "title": "Blade Runner 2049",
+      "description": "stuff stuff stuff"
+    },
+    { "id": "3", "title": "Mean girls", "description": "stuff stuff stuff" },
+    { "id": "4", "title": "Poor Things", "description": "stuff stuff stuff" },
+    {
+      "id": "5",
+      "title": "Star Wars Christmas Special",
+      "descriptioniews": "stuff stuff stuff"
+    },
+    { "id": "6", "title": "About Time", "description": "stuff stuff stuff" }
+  ],
+  "comments": [
+    { "id": "1", "text": "a comment about post 1", "postId": "1" },
+    { "id": "2", "text": "another comment about post 1", "postId": "1" },
+    { "id": "3", "text": "another comment about post 1", "postId": "1" },
+    { "id": "4", "text": "another comment about post 1", "postId": "1" },
+    { "id": "5", "text": "another comment about post 1", "postId": "1" }
+  ]
+}
