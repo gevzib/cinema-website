@@ -1,19 +1,41 @@
 {
   "movie": [
-    { "id": "1", "title": "Interstellar", "description": "stuff stuff stuff" },
+    {
+      "id": "1",
+      "title": "Interstellar",
+      "description": "stuff stuff stuff",
+      "image": "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    },
     {
       "id": "2",
       "title": "Blade Runner 2049",
-      "description": "stuff stuff stuff"
+      "description": "stuff stuff stuff",
+      "image": "https://m.media-amazon.com/images/M/MV5BNzA1Njg4NzYxOV5BMl5BanBnXkFtZTgwODk5NjU3MzI@._V1_.jpg"
     },
-    { "id": "3", "title": "Mean girls", "description": "stuff stuff stuff" },
-    { "id": "4", "title": "Poor Things", "description": "stuff stuff stuff" },
+    {
+      "id": "3",
+      "title": "Mean girls",
+      "description": "stuff stuff stuff",
+      "image": "https://m.media-amazon.com/images/I/91pditujKRL.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Poor Things",
+      "description": "stuff stuff stuff",
+      "image": "https://shaftesburyartscentre.org.uk/wps2/wp-content/uploads/2023/12/Poor-Things-web.jpg"
+    },
     {
       "id": "5",
       "title": "Star Wars Christmas Special",
-      "descriptioniews": "stuff stuff stuff"
+      "descriptioniews": "stuff stuff stuff",
+      "image": "https://image.tmdb.org/t/p/original/eLIKCGIiYVaplbhKFGcPzmiywF2.jpg"
     },
-    { "id": "6", "title": "About Time", "description": "stuff stuff stuff" }
+    {
+      "id": "6",
+      "title": "About Time",
+      "description": "stuff stuff stuff",
+      "image": "https://artofthemovies.co.uk/cdn/shop/products/AboutTime1.jpg?v=1644084916"
+    }
   ],
   "comments": [
     { "id": "1", "text": "a comment about post 1", "postId": "1" },
