@@ -1,0 +1,12 @@
+h1, p {
+    font-family: Lato;
+  }
+
+  li {
+    list-style: none; 
+  }
+   
+[type="date"] {
+    text-align: center;
+  }
+
