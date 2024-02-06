@@ -11,6 +11,7 @@ import Film3 from './Film3';
 import Nav from './Nav';
 import Contact from './Contact';
 import ConfirmFilm from './ConfirmFilm';
+import Profile from './Profile';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               <Route path="3" element={<Film3 />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
         </BrowserRouter>
       </header>
