@@ -2,17 +2,18 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { fetchMovies } from "./api/api";
 
 function Films() {
   const [isLoading, setIsLoading] = useState(true);
   const [movieList, setMovieList] = useState([]);
   useEffect(() => {
     setIsLoading(true);
-    axios.get("http://localhost:3000/movie").then((res) => {
+    fetchMovies().then((res) => {
       setIsLoading(false);
-      setMovieList(res.data);
+      setMovieList(res);
     });
-  }, [setMovieList]);
+  }, [setIsLoading, setMovieList]);
   return isLoading ? (
     <div>...loading</div>
   ) : (

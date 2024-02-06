@@ -1,14 +1,15 @@
 import { useDebugValue, useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import axios from "axios";
+import { fetchMovie } from "./api/api";
 function FilmCard() {
   const [isLoading, setIsLoading] = useState(true);
   const [movie, setMovie] = useState({});
   let { films_id } = useParams();
   useEffect(() => {
-    axios.get(`http://localhost:3000/movie/${films_id}`).then((res) => {
+    fetchMovie(films_id).then((res) => {
       setIsLoading(false);
-      setMovie(res.data);
+      setMovie(res);
     });
   }, [setIsLoading, setMovie]);
   return isLoading ? (
