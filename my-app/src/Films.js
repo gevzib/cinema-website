@@ -25,8 +25,6 @@ function Films() {
         return (
           <Link to={`/films/${movie.id}`} key={movie.id}>
             <ul key={movie.id}>
-              <li>{movie.title}</li>
-
               <li>
                 <img
                   src={movie.image}
@@ -35,8 +33,6 @@ function Films() {
                   alt={`poster for movie ${movie.title}`}
                 />
               </li>
-
-              <li>{movie.description}</li>
             </ul>
           </Link>
         );

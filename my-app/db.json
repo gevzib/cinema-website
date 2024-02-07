@@ -27,7 +27,7 @@
     {
       "id": "5",
       "title": "Star Wars Christmas Special",
-      "descriptioniews": "stuff stuff stuff",
+      "description": "stuff stuff stuff",
       "image": "https://image.tmdb.org/t/p/original/eLIKCGIiYVaplbhKFGcPzmiywF2.jpg"
     },
     {
@@ -43,5 +43,14 @@
     { "id": "3", "text": "another comment about post 1", "postId": "1" },
     { "id": "4", "text": "another comment about post 1", "postId": "1" },
     { "id": "5", "text": "another comment about post 1", "postId": "1" }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Bob",
+      "lastName": "Phillips",
+      "email": "bob@emial.com",
+      "password": "password"
+    }
   ]
 }
