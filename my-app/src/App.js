@@ -10,7 +10,8 @@ import Nav from "./Nav";
 import Contact from "./Contact";
 import ConfirmFilm from "./ConfirmFilm";
 import FilmCard from "./FilmCard";
-
+import { createContext } from "react";
+const ThemeContext = createContext(null);
 function App() {
   return (
     <div className="App">
