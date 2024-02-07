@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchMovies } from "./api/api";
+import { ThemeContext } from "./contexts/context";
 
 function Films() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,7 +18,6 @@ function Films() {
     <div>...loading</div>
   ) : (
     <div>
-      {console.log("here")}
       <h1>View Current Films</h1>
 
       {movieList.map((movie) => {

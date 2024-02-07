@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./profile.css";
+import axios from "axios";
 
-function Profile({ setUserDetails }) {
+function Profile({ setUserDetails, userDetails }) {
   let [inputs, setInputs] = useState({});
 
   //let [information, setInformation] = useState({});
-
+  useEffect(() => {
+    if (Object.keys(userDetails).length) {
+      axios
+        .post("http://localhost:3000/users", userDetails)
+        .then((res) => {
+          console.log(res);
+        })
+        .then(() => {
+          setUserDetails({});
+        });
+    }
+  }, [userDetails, setUserDetails]);
   function handleToSubmit(e) {
     e.preventDefault();
     setUserDetails((items) => {
