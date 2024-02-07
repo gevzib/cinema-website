@@ -19,6 +19,10 @@ function App() {
           <Nav />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/addfilm">
+              <Route index element={<AddFilm />} />
+              <Route path="confirm" element={<ConfirmFilm />} />
+            </Route>
             <Route path="/films" element={<Films />} />
             <Route path="/films/:films_id" element={<FilmCard />} />
             <Route path="/contact" element={<Contact />} />

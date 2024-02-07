@@ -38,7 +38,7 @@ export default (props) => {
     let test = {
         age:123,
         gender: 'mf',
-        telephone:'999'
+        telephone:'999',
     };
 
     let [inputs, setInputs] = useState(test);
@@ -51,8 +51,36 @@ export default (props) => {
             setInputs(newData);
         }
     }
+    
+    function sub() {
+        sessionStorage.setItem('cinema', document.getElementById("cinema").value);
+        sessionStorage.setItem('location', document.getElementById("location").value);
+        sessionStorage.setItem('film', document.getElementById("film").value);
+        sessionStorage.setItem(document.getElementById("date1").value, []);
+        sessionStorage.setItem(document.getElementById("date2").value, []);
+        sessionStorage.setItem(document.getElementById("date3").value, []);
+        sessionStorage.setItem(document.getElementById("date4").value, []);
+        sessionStorage.setItem(document.getElementById("date5").value, []);
+        sessionStorage.setItem(document.getElementById("date6").value, []);
+        sessionStorage.setItem(document.getElementById("date7").value, []);
+    }
 
-    return (
+    let dates = [];
+
+    function setDates() {
+        let date = new Date();
+        let d = date.getDate();
+        for(let i = 0; i < 7; i++){
+            d += 7;
+            date.setDate(d);
+            dates.push(date.toISOString().split("T")[0]);
+        }    
+    }
+
+    {setDates()}
+
+    return ( 
+        
         /*<form onSubmit={e=>{e.preventDefault();}}>
             <h1>Person: {counter}</h1>
             <h4>{inputs.title}</h4>
@@ -95,13 +123,17 @@ export default (props) => {
             {list(props.list)}
         </form>*/
 
+        <div><br /><br /><br /><br />
+
+        <button>Click me</button>
+
         <form onSubmit={e=>{e.preventDefault();}}>
             <h1>Add Film Listing</h1>
-            <table>
-                <tr>
+            <table onInput={e=>{doInput(e)}}>
+                <tbody><tr>
                     <td>Cinema: </td>
                     <td>
-                        <select>
+                        <select id="cinema">
                             <option>Cineworld</option>
                             <option>Empire</option>
                             <option>Everyman</option>
@@ -115,64 +147,64 @@ export default (props) => {
                 </tr>
                 <tr>
                     <td>Location: </td>
-                    <td><input name="location" value={props.location} /></td>
+                    <td><input id="location" value={this} /></td>
                 </tr>
                 <tr>
                     <td>Film Title: </td>
-                    <td><input name="film" value={props.film} /></td>
+                    <td><input id="film" value={this} /></td>
                 </tr>
                 <tr>
                     <td>Timings: </td>
-                    <td>10/02/24</td>
-                    <td><input name="day1time1" value={props.day1time1} /></td>
-                    <td><input name="day1time2" value={props.day1time2} /></td>
-                    <td><input name="day1time3" value={props.day1time1} /></td>
+                    <td>{dates[0]}</td>
+                    <td><input id="day1time1" value={this} type="time" /></td>
+                    <td><input id="day1time2" value={this} type="time" /></td>
+                    <td><input id="day1time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>11/02/24</td>
-                    <td><input name="day2time1" value={props.day2time1} /></td>
-                    <td><input name="day2time2" value={props.day2time2} /></td>
-                    <td><input name="day2time3" value={props.day2time1} /></td>
+                    <td><input id="date2" type="date" value={dates[1]} readOnly /></td>
+                    <td><input id="day2time1" value={this} type="time" /></td>
+                    <td><input id="day2time2" value={this} type="time" /></td>
+                    <td><input id="day2time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>12/02/24</td>
-                    <td><input name="day3time1" value={props.day3time1} /></td>
-                    <td><input name="day3time2" value={props.day3time2} /></td>
-                    <td><input name="day3time3" value={props.day3time1} /></td>
+                    <td><input id="date3" type="date" value={dates[2]} readOnly /></td>
+                    <td><input id="day3time1" value={this} type="time" /></td>
+                    <td><input id="day3time2" value={this} type="time" /></td>
+                    <td><input id="day3time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>13/02/24</td>
-                    <td><input name="day4time1" value={props.day4time1} /></td>
-                    <td><input name="day4time2" value={props.day4time2} /></td>
-                    <td><input name="day4time3" value={props.day4time1} /></td>
+                    <td><input id="date4" type="date" value={dates[3]} readOnly /></td>
+                    <td><input id="day4time1" value={this} type="time" /></td>
+                    <td><input id="day4time2" value={this} type="time" /></td>
+                    <td><input id="day4time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>14/02/24</td>
-                    <td><input name="day5time1" value={props.day5time1} /></td>
-                    <td><input name="day5time2" value={props.day5time2} /></td>
-                    <td><input name="day5time3" value={props.day5time1} /></td>
+                    <td><input id="date5" type="date" value={dates[4]} readOnly /></td>
+                    <td><input id="day5time1" value={this} type="time" /></td>
+                    <td><input id="day5time2" value={this} type="time" /></td>
+                    <td><input id="day5time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>15/02/24</td>
-                    <td><input name="day6time1" value={props.day6time1} /></td>
-                    <td><input name="day6time2" value={props.day6time2} /></td>
-                    <td><input name="day6time3" value={props.day6time1} /></td>
+                    <td><input id="date6" type="date" value={dates[5]} readOnly /></td>
+                    <td><input id="day6time1" value={this} type="time" /></td>
+                    <td><input id="day6time2" value={this} type="time" /></td>
+                    <td><input id="day6time3" value={this} type="time" /></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>16/02/24</td>
-                    <td><input name="day7time1" value={props.day7time1} /></td>
-                    <td><input name="day7time2" value={props.day7time2} /></td>
-                    <td><input name="day7time3" value={props.day7time1} /></td>
-                </tr>
+                    <td><input id="date7" type="date" value={dates[6]} readOnly /></td>
+                    <td><input id="day7time1" value={this} type="time" /></td>
+                    <td><input id="day7time2" value={this} type="time" /></td>
+                    <td><input id="day7time3" value={this} type="time" /></td>
+                </tr></tbody>
             </table>
-            <button onClick={<Link to="/confirm"></Link>}>Submit</button>
+            <button><Link to="confirm">Submit</Link></button>
         </form>
-
+        </div>
     )
 };
