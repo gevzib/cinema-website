@@ -12,8 +12,12 @@ import Nav from './Nav';
 import Contact from './Contact';
 import ConfirmFilm from './ConfirmFilm';
 import Profile from './Profile';
+import { useState } from 'react';
 
 function App() {
+  let [userDetails, setUserDetails] = useState({});
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -32,7 +36,7 @@ function App() {
               <Route path="3" element={<Film3 />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile setUserDetails= {setUserDetails}/>} />
           </Routes>
         </BrowserRouter>
       </header>
